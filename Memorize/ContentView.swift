@@ -12,20 +12,31 @@ struct ContentView: View {
     
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .foregroundColor(Color.green)
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Jianghao Wang!")
-            Text("How cool it is!")
-        }
+        HStack (content:{
+            CardView()
+            CardView()
+            CardView()
+            CardView()
+        })
         .padding()
+        .foregroundColor(.green)
     }
 }
 
 
-
+struct CardView: View{
+    var body: some View{
+        ZStack ( content:{  // function
+            RoundedRectangle(cornerRadius: 15)
+                .foregroundColor(.white)
+            RoundedRectangle(cornerRadius: 15)
+                .strokeBorder( lineWidth:5)
+            
+            Text("🥲").font(.largeTitle)
+            
+        })
+    }
+}
 
 
 
